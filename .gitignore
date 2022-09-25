@@ -105,3 +105,6 @@ dist
 
 # Ignore package-lock.json file
 package-lock.json
+
+# Ignore DS_Store file
+.DS_Store
