@@ -3,6 +3,7 @@
 ## Description
 REST-Rant is an app where users can review restaurants. It utilizes server side centeric coding to accomplish a request and response handling, pushing finished products to the end user.
 
+## Routes
 | Method |           Path           |                      Purpose                     |
 |:------:|:------------------------:|:------------------------------------------------:|
 |   GET  |             /            |                     Home page                    |
@@ -17,9 +18,11 @@ REST-Rant is an app where users can review restaurants. It utilizes server side 
 | DELETE | /places/:id/rant/:rantId | Delete a rant (comment) about a particular place |
 |   GET  |             *            |  404 page (matches any route not defined above)  |
 
-/places
-
-Places index page
+## Places
+| Name   |           City           |                      Cuisines                    |                        Images                    |
+|:------:|:------------------------:|:------------------------------------------------:|:------------------------------------------------:|
+|        |             /            |                     Home page                    |                                                  |
+|   GET  |          /places         |                 Places index page                |                                                  |
 
 ## Technologies Used
 Node.js, Express Server, Dotenv
