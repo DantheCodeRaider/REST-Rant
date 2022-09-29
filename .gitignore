@@ -103,8 +103,5 @@ dist
 # TernJS port file
 .tern-port
 
-# Ignore package-lock.json file
-package-lock.json
-
 # Ignore DS_Store file
 .DS_Store
