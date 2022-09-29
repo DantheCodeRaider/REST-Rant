@@ -1,7 +1,7 @@
 {
   "name": "rest-rant",
   "version": "1.0.0",
-  "description": "",
+  "description": "REST-Rant is an app where users can review restaurants. It utilizes server side centeric coding to accomplish a request and response handling, pushing finished products to the end user.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -21,7 +21,7 @@
     "dotenv": "^16.0.2",
     "express": "^4.18.1",
     "express-react-views": "^0.11.0",
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }

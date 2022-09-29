@@ -1,19 +1,6 @@
 const express = require('express')
-const router = express.Router()
-
-let places = [{
-    name: 'H-Thai-ML',
-    city: 'Seattle',
-    state: 'WA',
-    cuisines: 'Thai, Pan-Asian',
-    pic: 'http://placekitten.com/250/250'
-  }, {
-    name: 'Coding Cat Cafe',
-    city: 'Phoenix',
-    state: 'AZ',
-    cuisines: 'Coffee, Bakery',
-    pic: 'http://placekitten.com/250/250'
-  }]
+const places = express.Router()
+const Place = require('../models/places.js') 
 
 //const router = require('express').Router()
 /* router.get('/', (req, res) => {
@@ -22,12 +9,23 @@ let places = [{
 }) */
 
 // GET /places
-app.get('/', (req, res) => {
-    res.render('places/index', { places })
+places.get('/', (req, res) => {
+    res.render('places/Index',
+     { 
+      places : Place,
+      title: 'Index Page' 
+    }
+    )
   })
-  
 
-  
+// SHOW /places
+places.get('/:arrayIndex', (req, res) => {
+  res.send(Place[req.params.arrayIndex])
+})
 
-module.exports = router
+places.get('*', (req, res) => {
+  res.render('error404')
+})
+
+module.exports = places
 

@@ -1,7 +1,11 @@
-require('dotenv').config()
+// DEPENDENCIES
 const express = require('express')
-const app = express()
 
+
+// CONFIGURATION
+require('dotenv').config()
+const PORT = process.env.PORT
+const app = express()
 
 // MIDDLEWARE
 app.set('views', __dirname + '/views')
@@ -12,17 +16,19 @@ app.engine('jsx', require('express-react-views').createEngine())
 
 //Routes
 app.get('/', (req, res) => {
-    res.send('home')
+    res.render('home')
 })
 
-app.get('*', (req, res) => {
-    res.render('error404')
-  })
-  
-
 // Places
-const placesController = require('./controllers/places')
+const placesController = require('./controllers/places.js')
 app.use('/places', placesController)
 
-app.listen(process.env.PORT)
+app.get('*', (req, res) => {
+  res.render('error404')
+})
+
+// LISTEN
+app.listen(PORT, () => {
+  console.log('listening on port', PORT);
+})
 

@@ -21,8 +21,8 @@ REST-Rant is an app where users can review restaurants. It utilizes server side 
 ## Places
 | Name   |           City           |                      Cuisines                    |                        Images                    |
 |:------:|:------------------------:|:------------------------------------------------:|:------------------------------------------------:|
-|        |             /            |                     Home page                    |                                                  |
-|   GET  |          /places         |                 Places index page                |                                                  |
+|        |                          |                                                  |                                                  |
+|        |                          |                                                  |                                                  |
 
 ## Technologies Used
 Node.js, REACT, Express Server, Dotenv

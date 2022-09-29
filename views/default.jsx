@@ -4,9 +4,10 @@ function Default (html) {
     return (
         <html>
             <head>
-                <title>Title</title>
+                <title>{html.title || 'Default'}</title>
             </head>
             <body>
+                <h1>HTML Rendered!</h1>
                 {html.children}
             </body>
         </html>
@@ -14,4 +15,3 @@ function Default (html) {
   }
 
 module.exports = Default
-``

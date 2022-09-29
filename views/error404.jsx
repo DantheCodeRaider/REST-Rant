@@ -11,6 +11,5 @@ function error404 () {
       </Default>
     )
   }
-  
 
 module.exports = error404
