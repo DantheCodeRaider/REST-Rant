@@ -9,8 +9,12 @@ function Default (html) {
                 <title>{html.title || 'Default'}</title>
             </head>
             <body>
-                <h1>REST-Rant</h1>
-                {html.children}
+                <div className="wrapper">
+                    <h1>REST-Rant</h1>
+                    {html.children}
+                    <div className="push"></div>
+                </div>
+                    <footer className="footer">Custom Footer Goes Here</footer>
             </body>
         </html>
     )
