@@ -10,7 +10,7 @@ const Place = require('../models/places.js')
 
 // GET /places
 places.get('/', (req, res) => {
-    res.render('places/Index',
+    res.render('places/index',
      { 
       places : Place,
       title: 'Index Page' 
