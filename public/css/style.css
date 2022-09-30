@@ -1,5 +1,22 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  text-align: center;
+}
+
 h1 {
     text-align: center;
     color: cornflowerblue;
   }
   
+  h2 {
+    text-align: center;
+    color: lightskyblue;
+  }
+
+  p {
+    text-align: center;
+    color: black;
+  }

@@ -9,7 +9,7 @@ function Default (html) {
                 <title>{html.title || 'Default'}</title>
             </head>
             <body>
-                <h1>HTML Rendered!</h1>
+                <h1>REST-Rant</h1>
                 {html.children}
             </body>
         </html>
