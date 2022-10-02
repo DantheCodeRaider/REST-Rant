@@ -4,6 +4,7 @@ function Default (html) {
     return (
         <html>
             <head>
+                <link href="/images/favicon.ico" rel="icon" type="image/x-icon" />
                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"/>
                 <link rel="stylesheet" href="/css/style.css"/>
                 <title>{html.title || 'Default'}</title>
