@@ -24,7 +24,14 @@ places.get('/new', (req, res) => {
   
 // SHOW /places
 places.get('/:arrayIndex', (req, res) => {
-  res.send(Place[req.params.arrayIndex])
+  let id = Number(req.params.arrayIndex)
+  if (isNaN(id)) {
+    res.render('error404')
+  } else if (!Place[id]) {
+    res.render('error404')
+  } else {
+  res.render('places/show', { places: Place[id] })
+  }
 })
 
 places.get('*', (req, res) => {
