@@ -23,14 +23,14 @@ places.get('/new', (req, res) => {
 })
   
 // SHOW /places
-places.get('/:arrayIndex', (req, res) => {
-  let id = Number(req.params.arrayIndex)
+places.get('/:id', (req, res) => {
+  let id = Number(req.params.id)
   if (isNaN(id)) {
     res.render('error404')
   } else if (!Place[id]) {
     res.render('error404')
   } else {
-  res.render('places/show', { places: Place[id] })
+  res.render('places/show', { places: Place[id], id })
   }
 })
 
@@ -53,5 +53,21 @@ places.post('/', (req, res) => {
     Place.push(req.body)
     res.redirect('/places')
 })
+
+places.delete('/:id', (req, res) => {
+  let id = Number(req.params.id)
+  if (isNaN(id)) {
+    res.render('error404')
+  }
+  else if (!Place[id]) {
+    res.render('error404')
+  }
+  else {
+    Place.splice(id, 1)
+    res.redirect('/places')
+  }
+})
+
+
 
 module.exports = places

@@ -1,14 +1,29 @@
 const React = require('react')
-const Def = require('../Default')
+const Default = require('../Default')
 
-function show () {
+function show (data) {
     return (
-        <Def>
+        <Default>
           <main>
-            <h1>Show Page</h1>
+            
+            <div key={data.id} className="col-sm-6">
+                <h2>{ data.name }</h2>
+                <img src={data.places.pic} alt={data.places.name}/>
+                <h3>Rating</h3>
+                <p>{data.places.rating}</p>
+                <h3>Description</h3>
+                <p className="text-center">Located in {data.places.city}, {data.places.state} and serving {data.places.cuisines}</p>
+                <a href={`/places/${data.id}/edit`} className="btn btn-warning">Edit</a>     
+                <form method="POST" action={`/places/${data.id}?_method=DELETE`}> 
+                    <button type="submit" className="btn btn-danger">Delete</button>
+                </form> 
+                <h3>Comments</h3>
+                <p>{data.places.comments}</p>
+            </div>
           </main>
-        </Def>
+        </Default>
     )
 }
 
 module.exports = show
+
