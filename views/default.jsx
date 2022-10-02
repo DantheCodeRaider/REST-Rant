@@ -28,7 +28,7 @@ function Default (html) {
                     {html.children}
                     <div className="push"></div>
                 </div>
-                    <footer className="footer">Custom Footer Goes Here</footer>
+                    <footer className="footer"> ⓒ Dan the Code Raider 2022-2023. <br></br><a href="https://github.com/DantheCodeRaider">DantheCodeRaider@github</a></footer>
             </body>
         </html>
     )

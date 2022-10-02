@@ -10,14 +10,13 @@ function index ({places, title}) {
           </h2>
           <p className="text-center">{place.cuisines}</p>
           <img src={place.pic} alt={place.name}/>
-          <p className="text-center">Located in {place.city}, {place.state}</p>
+          <p className="text-center">Located in {place.city}, {place.state}. {place.founded}.</p>
         </div>
       )
     })
       return (
         <Default title={title}>
             <main>
-                <h1>PLACES INDEX PAGE</h1>
                 <div className="row">
                 {placesFormatted}
                 </div>

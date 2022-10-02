@@ -5,6 +5,7 @@ module.exports = [
     state: 'WA',
     cuisines: 'Thai, Pan-Asian',
     pic: '/images/thai-food.jpg',
+    founded: 'Established 1991',
     rating:'Not Rated',
     comments: 'No comments yet!',
   }, 
@@ -14,6 +15,7 @@ module.exports = [
     state: 'AZ',
     cuisines: 'Coffee, Bakery',
     pic: '/images/coffee-cat.jpg',
+    founded: 'Established 2007',
     rating:'Not Rated',
     comments: 'No comments yet!',
   }

@@ -18,11 +18,11 @@ function edit_form (data) {
                     </div>
                 </div>
                 <div className="row"> 
-                <div className="form-group col-sm-6">
+                <div className="form-group col-sm-4">
                         <label htmlFor="city">City</label>
                         <input className="form-control" id="city" name="city" defaultValue={data.places.city}/>
                     </div>
-                    <div className="form-group col-sm-6">
+                    <div className="form-group col-sm-4">
                         <label htmlFor="state">State</label>
                         <input className="form-control" list="state-list" id="state" name="state" defaultValue={data.places.state} />
                             <datalist id="state-list">
@@ -77,10 +77,16 @@ function edit_form (data) {
                                 <option value="WY">Wyoming</option>
                             </datalist>
                     </div>
+                    <div className="form-group col-sm-4">
+                        <label htmlFor="founded">Established</label>
+                        <input className="form-control" id="founded" name="founded" defaultValue={data.places.founded}/>
+                    </div>
                 </div>
-                <div className="form-group">
-                    <label htmlFor="cuisines">Cuisines</label>
-                    <input className="form-control" id="cuisines" name="cuisines" defaultValue={data.places.cuisines} required />
+                <div className="row"> 
+                    <div className="form-group">
+                        <label htmlFor="cuisines">Cuisines</label>
+                        <input className="form-control" id="cuisines" name="cuisines" defaultValue={data.places.cuisines} required />
+                    </div>
                 </div>
                 <input className="btn btn-primary" type="submit" value="Update Place" />
             </form>
