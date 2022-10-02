@@ -22,6 +22,20 @@ places.get('/new', (req, res) => {
     res.render('places/new')
 })
   
+places.get('/:id/edit', (req, res) => {
+  let id = Number(req.params.id)
+  if (isNaN(id)) {
+      res.render('error404')
+  }
+  else if (!Place[id]) {
+      res.render('error404')
+  }
+  else {
+    res.render('places/edit', { places: Place[id] })
+  }
+})
+
+
 // SHOW /places
 places.get('/:id', (req, res) => {
   let id = Number(req.params.id)
@@ -54,6 +68,9 @@ places.post('/', (req, res) => {
     res.redirect('/places')
 })
 
+// EDIT
+
+// DELETE
 places.delete('/:id', (req, res) => {
   let id = Number(req.params.id)
   if (isNaN(id)) {
@@ -67,7 +84,5 @@ places.delete('/:id', (req, res) => {
     res.redirect('/places')
   }
 })
-
-
 
 module.exports = places
