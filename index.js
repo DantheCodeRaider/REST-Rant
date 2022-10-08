@@ -2,6 +2,7 @@
 const express = require('express')
 
 
+
 // CONFIGURATION
 require('dotenv').config()
 const PORT = process.env.PORT
@@ -30,6 +31,7 @@ app.use('/places', placesController)
 app.get('*', (req, res) => {
   res.render('error404')
 })
+
 
 // LISTEN
 app.listen(PORT, () => {

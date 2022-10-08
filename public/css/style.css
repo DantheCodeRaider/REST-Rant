@@ -5,6 +5,7 @@ html, body {
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  box-sizing: border-box;
 }
 
 .wrapper {
@@ -67,4 +68,9 @@ main {
   margin-right: 20px;
   margin-left: 20px;
   background-color: white;
+  padding: 1rem;
+}
+
+img {
+  max-width: 60%;
 }

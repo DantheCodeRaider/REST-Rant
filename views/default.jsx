@@ -24,11 +24,11 @@ function Default (html) {
                             </li>
                         </ul>
                     </nav>
-                    <h1>REST-Rant</h1>
+                    <p><h1>REST-Rant</h1></p>
                     {html.children}
                     <div className="push"></div>
                 </div>
-                    <footer className="footer"> ⓒ Dan the Code Raider 2022-2023. <br></br><a href="https://github.com/DantheCodeRaider">DantheCodeRaider@github</a></footer>
+                    <footer className="footer"><p>ⓒ Dan the Code Raider 2022-2023. <br></br><a href="https://github.com/DantheCodeRaider">DantheCodeRaider@github</a></p></footer>
             </body>
         </html>
     )
