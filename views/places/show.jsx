@@ -15,14 +15,13 @@ function show (data) {
                 </div>
                 <div className="col-sm-6 col-md-3 col-lg-3">                
                   <h3>Description</h3>
-                  <p className="text-center">Located in {data.place.city}, {data.place.state} and serving {data.place.cuisines}. {data.place.founded}.</p>
+                  <p className="text-center">{data.place.showEstablished()} Mainstays from the menu consist of {data.place.cuisines} cuisines.</p>
                 </div>
                 <div className="col-sm-6 col-md-3 col-lg-3">                
                   <h3>Comments</h3>
                   {/* <p>{data.places.comments}</p> */}
                 </div>
               </div>
-
               <p><a href={`/places/${data.place.id}/edit`} className="btn btn-warning">Edit</a></p>
               <br></br>     
               <form method="POST" action={`/places/${data.place.id}?_method=DELETE`}> 
@@ -35,4 +34,3 @@ function show (data) {
 }
 
 module.exports = show
-

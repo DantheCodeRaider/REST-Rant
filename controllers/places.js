@@ -17,18 +17,17 @@ router.get('/', (req, res) => {
 router.get('/new', (req, res) => {
     res.render('places/new')
 })
-  
+
+//EDIT  
 router.get('/:id/edit', (req, res) => {
-  let id = Number(req.params.id)
-  if (isNaN(id)) {
+  db.Place.findById(req.params.id)
+  .then(place => {
+      res.render('places/edit', { place })
+  })
+  .catch(err => {
+      console.log('err', err)
       res.render('error404')
-  }
-  else if (!Place[id]) {
-      res.render('error404')
-  }
-  else {
-    res.render('places/edit', { places: Place[id], id })
-  }
+  })
 })
 
 // SHOW /places
@@ -42,7 +41,6 @@ router.get('/:id', (req, res) => {
       res.render('error404')
   })
 })
-
 
 router.get('*', (req, res) => {
   res.render('error404')
@@ -62,44 +60,29 @@ router.post('/', (req, res) => {
 
 // EDIT
 router.put('/:id', (req, res) => {
-  let id = Number(req.params.id)
-  if (isNaN(id)) {
-      res.render('error404')
+  if (!req.body.pic) {
+      // Default image if one is not provided
+      req.body.pic = '/images/sarah-cervantes-PKXAiiy1O4U-unsplash.jpg'
   }
-  else if (!Place[id]) {
-      res.render('error404')
+  if (!req.body.city) {
+      req.body.city = 'Anytown'
   }
-  else {
-      // Dig into req.body and make sure data is valid
-      if (!req.body.pic) {
-          // Default image if one is not provided
-          req.body.pic = 'http://placekitten.com/400/400'
-      }
-      if (!req.body.city) {
-          req.body.city = 'Anytown'
-      }
-      if (!req.body.state) {
-          req.body.state = 'USA'
-      }
-      // Save the new data into places[id]
-      Place[id] = req.body
-      res.redirect(`/places/${id}`)
+  if (!req.body.state) {
+      req.body.state = 'USA'
   }
+  // Save the new data
+  db.Place.findByIdAndUpdate(req.params.id, req.body, { new: true }) 
+  .then(updatedPlace => {
+    res.redirect(`/places/${req.params.id}`) 
+  })
 })
 
 // DELETE
 router.delete('/:id', (req, res) => {
-  let id = Number(req.params.id)
-  if (isNaN(id)) {
-    res.render('error404')
-  }
-  else if (!Place[id]) {
-    res.render('error404')
-  }
-  else {
-    Place.splice(id, 1)
-    res.redirect('/places')
-  }
+  db.Place.findByIdAndDelete(req.params.id) 
+    .then(deletedPlace => { 
+      res.status(303).redirect('/places')
+    })
 })
 
 module.exports = router
