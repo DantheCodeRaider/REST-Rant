@@ -72,5 +72,18 @@ main {
 }
 
 img {
+  max-width: 100%;
+}
+
+#splashImg {
   max-width: 60%;
+}
+
+.buttonBox {
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  margin: 10px;
 }

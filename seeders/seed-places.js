@@ -8,7 +8,8 @@ db.Place.create([{
     pic: '/images/thai-food.jpg',
     founded: 1989,
     rating:'Not Rated'
-}, {
+},
+{
     name: 'Coding Cat Cafe',
     city: 'Phoenix',
     state: 'AZ',

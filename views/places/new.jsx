@@ -1,11 +1,22 @@
 const React = require('react')
 const Default = require('../Default')
 
-function new_form () {
+function new_form (data) {
+    let message = ''                 
+    if (data.message) {
+      message = (
+        <div className="alert alert-danger" role="alert">
+            <h4 className="alert-danger">
+          {data.message}
+            </h4>
+        </div>
+      )
+    }
     return (
         <Default>
           <main>
             <h2>Add a New Place</h2>
+            {message}
             <form method="POST" action="/places">
             <div className="row"> 
                     <div className="form-group col-sm-6">
@@ -79,7 +90,12 @@ function new_form () {
                     </div>
                     <div className="form-group col-sm-4">
                         <label htmlFor="founded">Established</label>
-                        <input className="form-control" id="founded" name="founded"/>
+                        <input 
+                        type="number"
+                        className="form-control" 
+                        id="founded" 
+                        name="founded"
+                        defaultValue={new Date().getFullYear()}/>
                     </div>
                 </div>
                 <div className="row"> 
@@ -97,4 +113,3 @@ function new_form () {
 }
 
 module.exports = new_form
-

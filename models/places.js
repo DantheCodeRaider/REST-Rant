@@ -8,8 +8,12 @@ const placeSchema = new mongoose.Schema({
   state: { type: String, default: 'USA' },
   cuisines: { type: String, required: true },
   pic: { type : String, default: '/images/sarah-cervantes-PKXAiiy1O4U-unsplash.jpg'  },
-  founded: { type: Number, min: 1400, max: 2500, required: false },
-  rating: { type: String, default: 'Not Rated' },
+  founded: {
+    type: Number,
+    min: [1673, 'Surely not that old?!'],
+    max: [new Date().getFullYear(), 'Hey, this year is in the future!']
+  },
+  rating: { type: String, default: 'Not Rated' }
 })
 
 // Helper methods
