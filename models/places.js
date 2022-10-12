@@ -13,7 +13,10 @@ const placeSchema = new mongoose.Schema({
     min: [1673, 'Surely not that old?!'],
     max: [new Date().getFullYear(), 'Hey, this year is in the future!']
   },
-  rating: { type: String, default: 'Not Rated' }
+  rating: { type: String, default: 'Not Rated' },
+  comments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Comment' }]
+
+  
 })
 
 // Helper methods

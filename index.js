@@ -32,7 +32,6 @@ app.get('*', (req, res) => {
   res.render('error404')
 })
 
-
 // LISTEN
 app.listen(PORT, () => {
   console.log('listening on port', PORT);

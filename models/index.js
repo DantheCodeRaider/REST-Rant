@@ -6,3 +6,4 @@ mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true, useUnifiedTopolo
   )
   
 module.exports.Place = require('./places')
+module.exports.Comment = require('./comment')
