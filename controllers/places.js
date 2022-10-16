@@ -30,9 +30,6 @@ router.get('/:id/edit', (req, res) => {
   })
 })
 
-
-
-
 // SHOW /places
 router.get('/:id', (req, res) => {
   db.Place.findById(req.params.id)
@@ -126,9 +123,13 @@ router.put('/:id', (req, res) => {
 // DELETE
 router.delete('/:id', (req, res) => {
   db.Place.findByIdAndDelete(req.params.id) 
-    .then(deletedPlace => { 
+    .then(place => { 
       res.status(303).redirect('/places')
     })
+    .catch(err => {
+      console.log('err', err)
+      res.render('error404')
+  })
 })
 
 module.exports = router

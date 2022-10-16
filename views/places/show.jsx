@@ -28,12 +28,16 @@ function show (data) {
     let sumRatings = data.place.comments.reduce((tot, c) => {
       return tot + c.stars
     }, 0)
-    let averageRating = sumRatings / data.place.comments.length
-    rating = (
-      <h3>
-        {Math.round(averageRating)} stars
-      </h3>
-    )
+    let averageRating = Math.round(sumRatings / data.place.comments.length)
+    let stars = ''
+  for (let i = 0; i < averageRating; i++) {
+    stars += String.fromCodePoint(0x2B50)
+  }
+  rating = (
+    <h3>
+      {stars} stars
+    </h3>
+  )
     comments = data.place.comments.map(c => {
       return (
         <div className="border col-sm-4">
@@ -116,6 +120,7 @@ function show (data) {
         </Default>
     )
 }
+
 
 module.exports = show
 
