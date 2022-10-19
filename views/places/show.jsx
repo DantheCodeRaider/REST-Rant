@@ -40,7 +40,7 @@ function show (data) {
   )
     comments = data.place.comments.map(c => {
       return (
-        <div className="border col-sm-4">
+        <div className="border col-sm-4" key={c.id}>
           <h2 className="rant">{c.rant ? `Rant! ${String.fromCodePoint(0x1F92C)}` : `Rave! ${String.fromCodePoint(0x1F929)}`}</h2>
           <h4>{c.content}</h4>
           <h3>
