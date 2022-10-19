@@ -1,6 +1,6 @@
 const e = require('express')
 const React = require('react')
-const Default = require('../Default')
+const Default = require('../default')
 //import { Box, Slider } from '@material-ui/core';
 //import { blue } from '@material-ui/core/colors';
 //import { useState } from 'react';
@@ -92,19 +92,6 @@ function show (data) {
                       <div className="form-group col-sm-4">
                         <label htmlFor="stars">Star Rating</label>
                         <input type="range" step="0.5" min="1" max="5" id="stars" name="stars" className="form-control" defaultValue="3"/>
-{/*                        <Box display="flex" flexDirection="column" m={10}>
-                            <Slider
-                              style={{ width: 300 }}
-                              min={1}
-                              max={5}
-                              step={0.5}
-                              value={value}
-                              marks
-                              onChange={changeValue}
-                              valueLabelDisplay="auto"
-                              getAriaValueText={getText}
-                              />
-                            </Box> */}
                       </div>
                       <div className="form-group col-sm-2">
                         <br></br>
@@ -121,31 +108,5 @@ function show (data) {
     )
 }
 
-
 module.exports = show
 
-/* Saving old format
-<main>
-            <div className="container" key={data.place.id}>
-              <p><h2>{data.place.name}</h2></p>
-              <div><img src={data.place.pic} className="rounded mx-auto d-block" alt={data.place.name}/></div>
-              <div className="row justify-content-md-center">
-                <div className="col-sm-6 col-md-3 col-lg-3">                
-                  <h3>Rating</h3>
-                  <p>{data.place.rating}</p>
-                </div>
-                <div className="col-sm-6 col-md-3 col-lg-3">                
-                  <h3>Description</h3>
-                  <p className="text-center">{data.place.showEstablished()} Mainstays from the menu consist of {data.place.cuisines} cuisines.</p>
-                </div>
-                <div className="col-sm-6 col-md-3 col-lg-3">                
-                  <h3>Comments</h3>
-                  {<p>{data.places.comments}</p>}
-                </div>
-              </div>
-              <p><a href={`/places/${data.place.id}/edit`} className="btn btn-warning">Edit</a></p>
-              <br></br>     
-              <form method="POST" action={`/places/${data.place.id}?_method=DELETE`}> 
-                <p><button type="submit" className="btn btn-danger">Delete</button></p>
-              </form>
-            </div>  */

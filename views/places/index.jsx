@@ -1,5 +1,5 @@
 const React = require('react')
-const Default = require('../Default')
+const Default = require('../default')
 
 function index ({places}) {
     let placesFormatted = places.map((place) => {

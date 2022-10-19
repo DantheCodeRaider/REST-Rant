@@ -1,5 +1,5 @@
 const React = require('react')
-const Default = require('../Default.jsx')
+const Default = require('../default.jsx')
 
 function edit_form (data) {
     return (
