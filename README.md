@@ -31,7 +31,7 @@ REST-Rant is an app where users can review restaurants. It utilizes server side 
 |         |                          |                                                  |
 
 ## Technologies Used
-Node.js, REACT, Express Server, Dotenv, MongoDB, and Mongoose
+Node.js, Express Server, Dotenv, MongoDB, and Mongoose
 
 ### Other Technologies used to in development
 Nodemon, and Postman
